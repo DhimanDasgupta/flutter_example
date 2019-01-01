@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _decrement() {
+  void _decrementCounter() {
     setState(() {
       _counter--;
     });
@@ -43,7 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(
+            widget.title,
+            style: TextStyle(color: Colors.black, inherit: true),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
         body: SafeArea(
           child: Center(
@@ -74,14 +79,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _incrementCounter,
                 tooltip: 'Increment',
                 child: Icon(Icons.add),
+                backgroundColor: Colors.black,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: FloatingActionButton(
-                onPressed: _decrement,
+                onPressed: _decrementCounter,
                 tooltip: 'Decrement',
                 child: Icon(Icons.minimize),
+                backgroundColor: Colors.black,
               ),
             ),
           ],
